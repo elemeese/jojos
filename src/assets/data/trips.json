@@ -1,0 +1,21 @@
+[
+    {
+      "driverName": "Juan Pérez",
+      "destination": "Santiago Centro",
+      "price": 1500,
+      "availableSeats": 3
+    },
+    {
+      "driverName": "Ana López",
+      "destination": "Providencia",
+      "price": 2000,
+      "availableSeats": 2
+    },
+    {
+      "driverName": "Pedro González",
+      "destination": "La Florida",
+      "price": 1000,
+      "availableSeats": 0
+    }
+  ]
+  

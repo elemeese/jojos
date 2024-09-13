@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Página de Inicio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logOut()">Cerrar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="home-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Viajes Disponibles</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let trip of trips">
+            <ion-label>
+              <h2>{{ trip.driverName }}</h2>
+              <p>{{ trip.destination }}</p>
+              <p>Precio: {{ trip.price }} CLP</p>
+              <p>Capacidad: {{ trip.availableSeats }} asientos disponibles</p>
+            </ion-label>
+            <ion-button slot="end" (click)="requestTrip(trip)" [disabled]="trip.availableSeats === 0">Solicitar Viaje</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="addTrip()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>

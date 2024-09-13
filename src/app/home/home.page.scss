@@ -1,0 +1,27 @@
+.home-container {
+  ion-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--ion-color-primary); /* Fondo celeste suave */
+  }
+
+  ion-card-title {
+    text-align: center;
+    color: var(--ion-color-dark); /* Título en negro */
+  }
+
+  ion-item {
+    --background: var(--ion-color-secondary); /* Fondo de los ítems calipso pastel */
+    color: var(--ion-color-dark); /* Texto en negro */
+  }
+
+  ion-button {
+    --background: var(--ion-color-dark); /* Botón en negro */
+    --color: var(--ion-color-primary-contrast); /* Texto en blanco */
+  }
+
+  .ion-fab-button {
+    --background: var(--ion-color-secondary); /* Botón flotante calipso pastel */
+  }
+}

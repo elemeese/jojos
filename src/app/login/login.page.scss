@@ -1,0 +1,21 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  
+    ion-card {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    ion-card-title {
+      text-align: center;
+    }
+  
+    .reset-password {
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+  
