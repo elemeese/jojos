@@ -6,16 +6,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AddTripComponent } from './add-trip/add-trip.component'; // Asegúrate de importar el componente del modal
+import { AddTripComponent } from './add-trip/add-trip.component'; // Importa el componente aquí
 
 @NgModule({
-  declarations: [AppComponent, AddTripComponent], // Declara AddTripComponent aquí
+  declarations: [AppComponent, AddTripComponent], // Declara el componente aquí
   imports: [
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

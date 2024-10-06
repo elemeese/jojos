@@ -6,6 +6,18 @@
     {
       "email": "user2@example.com",
       "password": "password456"
+    },
+    {
+      "email": "to.escalante@duocuc.cl",
+      "password": "escalante1"
+    },
+    {
+      "email": "mati.salasm@duocuc.cl",
+      "password": "salas1"
+    },
+    {
+      "email": "ken.ortega@duocuc.cl",
+      "password": "ortega1"
     }
   ]
       

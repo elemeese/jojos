@@ -8,6 +8,23 @@
 </ion-header>
 
 <ion-content>
+  <!-- Sección del ion-segment para cambiar entre "Mis Datos", "Experiencia Laboral", y "Certificaciones" -->
+  <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button value="mis-datos">
+      <ion-label>Mis Datos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="experiencia-laboral">
+      <ion-label>Experiencia Laboral</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="certificaciones">
+      <ion-label>Certificaciones</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- El contenido será cargado por el router-outlet correspondiente a las rutas -->
+  <router-outlet></router-outlet>
+  
+  <!-- Mantener la sección original de "Viajes Disponibles" que tenías antes -->
   <div class="home-container">
     <ion-card>
       <ion-card-header>
@@ -22,12 +39,15 @@
               <p>Precio: {{ trip.price }} CLP</p>
               <p>Capacidad: {{ trip.availableSeats }} asientos disponibles</p>
             </ion-label>
-            <ion-button slot="end" (click)="requestTrip(trip)" [disabled]="trip.availableSeats === 0">Solicitar Viaje</ion-button>
+            <ion-button slot="end" (click)="requestTrip(trip)" [disabled]="trip.availableSeats === 0">
+              Solicitar Viaje
+            </ion-button>
           </ion-item>
         </ion-list>
       </ion-card-content>
     </ion-card>
 
+    <!-- Botón flotante para agregar un nuevo viaje -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button (click)="addTrip()">
         <ion-icon name="add"></ion-icon>

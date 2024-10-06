@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Certificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nombre Certificado</ion-label>
+      <ion-input [(ngModel)]="certification.name" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha de Obtención</ion-label>
+      <ion-datetime [(ngModel)]="certification.obtainedDate" name="obtainedDate" required></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">¿Tiene Vencimiento?</ion-label>
+      <ion-toggle [(ngModel)]="certification.hasExpiration" name="hasExpiration"></ion-toggle>
+    </ion-item>
+
+    <ion-item *ngIf="certification.hasExpiration">
+      <ion-label position="floating">Fecha de Vencimiento</ion-label>
+      <ion-datetime [(ngModel)]="certification.expirationDate" name="expirationDate"></ion-datetime>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Guardar</ion-button>
+  </form>
+</ion-content>

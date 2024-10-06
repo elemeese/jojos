@@ -2,11 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
-interface User {
-  email: string;
-  password: string;
-}
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -15,6 +10,8 @@ interface User {
 export class LoginPage {
   email: string = '';
   password: string = '';
+  passwordType: string = 'password';  // Tipo de campo por defecto
+  passwordIcon: string = 'eye-off';   // Ícono por defecto
 
   constructor(private router: Router, private dataService: DataService) {}
 
@@ -25,8 +22,8 @@ export class LoginPage {
     }
 
     // Autenticación simulada usando JSON
-    this.dataService.getUsers().subscribe((users: User[]) => {
-      const user = users.find((u: User) => u.email === this.email && u.password === this.password);
+    this.dataService.getUsers().subscribe((users: any[]) => {
+      const user = users.find((u) => u.email === this.email && u.password === this.password);
       if (user) {
         console.log('Usuario autenticado', this.email);
         this.router.navigate(['/home']);
@@ -39,5 +36,10 @@ export class LoginPage {
   goToResetPassword() {
     this.router.navigate(['/reset-password']);
   }
-}
 
+  // Método para alternar la visibilidad de la contraseña
+  togglePasswordVisibility() {
+    this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
+    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+  }
+}
